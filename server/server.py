@@ -1,5 +1,3 @@
-from cmath import exp
-from msilib.schema import Error
 from dotenv import load_dotenv
 from flask import Flask, jsonify, make_response
 import subprocess
