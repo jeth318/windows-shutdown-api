@@ -9,7 +9,7 @@ Additional software needed in order to run the application on system startup:
     * pm2-installer (https://github.com/jessety/pm2-installer)
 
 Next step is to create a .env file located in root directory of the project.
-Add the following values:
+Add the following values (or change if you want. 0.0.0.0 makes it possible however to access this server from any computer in the local network):
     * HOST=0.0.0.0
     * PORT=6424
 
