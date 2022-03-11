@@ -20,8 +20,8 @@ def sendErrorResponse(e):
 @server.route('/poweroff', methods=['POST'])
 def index():
     try:
-        absAppPath = os.path.join(dirname, appPath).replace(os.sep, "/")
-        subprocess.run(absAppPath, check = True)
+        #absAppPath = os.path.join(dirname, appPath).replace(os.sep, "/")
+        subprocess.call(["shutdown", "/s", "/t", "20"])
     except Exception as e:
         return sendErrorResponse(str(e))
 
