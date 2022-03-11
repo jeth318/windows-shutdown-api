@@ -4,19 +4,20 @@ import subprocess
 import os
 load_dotenv()
 
-server = Flask(__name__)
+app = Flask(__name__)
 port = os.environ["PORT"]
 host = os.environ["HOST"]
-dirname = os.path.dirname(__file__)
 
 load_dotenv()
+
 
 def sendErrorResponse(e):
     exceptionMessage = "Failed to initiate shutdown. Reason: " + e
     print(exceptionMessage)
-    return make_response(jsonify(success=0,message=exceptionMessage), 500)
+    return make_response(jsonify(success=0, message=exceptionMessage), 500)
 
-@server.route('/poweroff', methods=['POST'])
+
+@app.route('/poweroff', methods=['POST'])
 def index():
     try:
         subprocess.call(["shutdown", "/s", "/t", "20"])
@@ -25,9 +26,7 @@ def index():
 
     sucessMessage = "Shutdown initiated"
     print(sucessMessage)
-    return make_response(jsonify(success=1,message=sucessMessage), 200)
-
-server.run(host=host, port=port)
+    return make_response(jsonify(success=1, message=sucessMessage), 200)
 
 
-
+app.run(host=host, port=port)
