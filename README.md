@@ -1,6 +1,5 @@
-In order to run this app you must first build the solution file (shutdowner.csproj).
-Next step is to make sure python3 is installed on your Windows 10 machine.
-You will need the following python packages installed:
+In order to run this app you need to install python3 on your Windows 10 machine.
+You will also need the following python packages installed:
     * flask
     * dotenv-python
 
